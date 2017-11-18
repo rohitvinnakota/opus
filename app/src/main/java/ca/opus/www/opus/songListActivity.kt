@@ -14,7 +14,7 @@ class songListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_songlist)
-        createSong.setOnClickListener({
+        newSongFab.setOnClickListener({
             val intent =   Intent(this,createNewSong::class.java);
             var message = "Test";
             intent.putExtra(AlarmClock.EXTRA_MESSAGE, message);
