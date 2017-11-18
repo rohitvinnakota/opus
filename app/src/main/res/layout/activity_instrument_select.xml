@@ -12,7 +12,7 @@
         android:layout_gravity="right|bottom"
         android:layout_marginBottom="140dp"
         android:layout_marginStart="84dp"
-        android:src="@android:drawable/ic_input_add" />
+        android:src="@drawable/android_drum" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/pianoFab"
@@ -23,19 +23,18 @@
         android:layout_gravity="right|bottom"
         android:layout_marginTop="57dp"
         android:layout_toEndOf="@+id/vocalsFab"
-        android:src="@android:drawable/ic_input_add" />
+        android:src="@drawable/android_piano" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/vocalsFab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_alignParentBottom="true"
         android:layout_gravity="right|bottom"
         android:layout_marginBottom="93dp"
         android:layout_marginStart="128dp"
         android:layout_toEndOf="@+id/drumsFab"
-        android:src="@android:drawable/ic_input_add" />
+        android:src="@drawable/android_vocals" />
 
 
 

@@ -12,15 +12,6 @@ import kotlinx.android.synthetic.main.activity_tracklist.*
 class PianoActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tracklist)
-        newInstrumentFab.setOnClickListener({
-            //take user to instrument screen
-            val intent = Intent(this, InstrumentSelect::class.java);
-            var message = "Test";
-            intent.putExtra(AlarmClock.EXTRA_MESSAGE, message);
-            startActivity(intent);
-
-
-        })
+        setContentView(R.layout.piano_activity)
     }
 }

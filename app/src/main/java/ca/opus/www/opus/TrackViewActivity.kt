@@ -23,7 +23,6 @@ class TrackViewActivity: AppCompatActivity() {
             intent.putExtra(AlarmClock.EXTRA_MESSAGE, message);
             startActivity(intent);
 
-
         })
 
 

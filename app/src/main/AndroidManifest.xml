@@ -22,9 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".createNewSong" />
+        <activity android:name=".CreateNewSong" />
         <activity android:name=".InstrumentSelect" />
-        <activity android:name=".songListActivity" />
+        <activity android:name=".SongListActivity" />
         <activity android:name=".TrackViewActivity" />
     </application>
 </manifest>
