@@ -17,7 +17,7 @@ class InstrumentSelect : AppCompatActivity() {
         pianoFab.setOnClickListener({
             //
             val intent = Intent(this, PianoActivity::class.java);
-            var message = "Test";
+            var message = "Piano";
             intent.putExtra(EXTRA_MESSAGE, message);
             startActivity(intent);
 
