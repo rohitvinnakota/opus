@@ -15,16 +15,23 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".LoginActivity"
-            android:label="@string/app_name">
+            android:label="@string/app_name"
+            android:theme="@style/AppFullScreenTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".createNewSong" />
-        <activity android:name=".InstrumentSelect" />
-        <activity android:name=".songListActivity" />
-        <activity android:name=".TrackViewActivity" />
+        <activity android:name=".CreateNewSong"
+            android:theme="@style/AppFullScreenTheme"/>
+        <activity android:name=".InstrumentSelect" android:theme="@style/AppFullScreenTheme"/>
+        <activity android:name=".SongListActivity" android:theme="@style/AppFullScreenTheme"/>
+        <activity android:name=".TrackViewActivity" android:theme="@style/AppFullScreenTheme"/>
+        <activity android:name=".VocalActivity" android:theme="@style/AppFullScreenTheme"/>
+        <activity android:name=".PianoActivity" android:theme="@style/AppFullScreenTheme"/>
+        <activity android:name=".DrumsActivity" android:theme="@style/AppFullScreenTheme"/>
     </application>
+
+
 </manifest>

@@ -2,42 +2,33 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent">
 
-    <android.support.design.widget.FloatingActionButton
+    <ImageButton
         android:id="@+id/drumsFab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:layout_above="@+id/vocalsFab"
         android:layout_alignParentStart="true"
-        android:layout_gravity="right|bottom"
-        android:layout_marginBottom="140dp"
-        android:layout_marginStart="84dp"
-        android:src="@android:drawable/ic_input_add" />
+        android:layout_below="@+id/pianoFab"
+        android:layout_centerInParent="true"
+        android:background="@null"
 
-    <android.support.design.widget.FloatingActionButton
+        android:contentDescription="@string/bottom_sheet_behavior"
+        android:src="@drawable/android_drum" />
+
+    <ImageButton
         android:id="@+id/pianoFab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@null"
+        android:contentDescription="@string/bottom_sheet_behavior"
+        android:src="@drawable/android_piano" />
 
-        android:layout_below="@+id/drumsFab"
-        android:layout_gravity="right|bottom"
-        android:layout_marginTop="57dp"
-        android:layout_toEndOf="@+id/vocalsFab"
-        android:src="@android:drawable/ic_input_add" />
-
-    <android.support.design.widget.FloatingActionButton
+    <ImageButton
         android:id="@+id/vocalsFab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
         android:layout_alignParentBottom="true"
-        android:layout_gravity="right|bottom"
-        android:layout_marginBottom="93dp"
-        android:layout_marginStart="128dp"
-        android:layout_toEndOf="@+id/drumsFab"
-        android:src="@android:drawable/ic_input_add" />
-
-
-
-
+        android:background="@null"
+        android:layout_below="@+id/drumsFab"
+        android:contentDescription="@string/bottom_sheet_behavior"
+        android:src="@drawable/android_vocals" />
 </RelativeLayout>

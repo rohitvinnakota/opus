@@ -24,15 +24,15 @@ class InstrumentSelect : AppCompatActivity() {
         })
 
         drumsFab.setOnClickListener({
-            val intent = Intent(this, TrackViewActivity::class.java);
-            var message = "Test";
+            val intent = Intent(this, DrumsActivity::class.java);
+            var message = "Drums";
             intent.putExtra(EXTRA_MESSAGE, message);
             startActivity(intent);
         })
 
         vocalsFab.setOnClickListener({
-            val intent = Intent(this, TrackViewActivity::class.java);
-            var message = "Test";
+            val intent = Intent(this, VocalActivity::class.java);
+            var message = "Vocals";
             intent.putExtra(EXTRA_MESSAGE, message);
             startActivity(intent);
         })
