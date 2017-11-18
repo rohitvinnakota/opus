@@ -1,6 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+    android:id="@+id/activity_main"
+    xmlns:android= "http://schemas.android.com/apk/res/android"
+    xmlns:tools= "http://schemas.android.com/tools"
+    android:layout_width= "match_parent"
+    android:layout_height= "match_parent"
+    android:paddingBottom= "16dp"
+    android:paddingLeft= "16dp"
+    android:paddingRight= "16dp"
+    android:paddingTop= "16dp">
+    <!--tools:context= "com.example.james.test.MainActvity"-->
 
-</LinearLayout>
+
+    <LinearLayout
+        android:orientation= "horizontal"
+        android:layout_centreInParent= "true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:weightSum= "8">
+
+        <Button
+            android:id="@+id/c"
+            android:layout_width="48dp"
+            android:layout_height="200dp"
+            android:text="c"/>
+
+        <Button
+            android:id="@+id/d"
+            android:layout_width="48dp"
+            android:layout_height="200dp"
+            android:text="d"/>
+
+        <Button
+            android:id="@+id/e"
+            android:layout_width="48dp"
+            android:layout_height="200dp"
+            android:text="e"/>
+
+        <Button
+            android:id="@+id/f"
+            android:layout_width="48dp"
+            android:layout_height="200dp"
+            android:text="f"/>
+
+        <Button
+            android:id="@+id/g"
+            android:layout_width="48dp"
+            android:layout_height="200dp"
+            android:text="g"/>
+
+        <Button
+            android:id="@+id/a"
+            android:layout_width="48dp"
+            android:layout_height="200dp"
+            android:text="a"/>
+
+        <Button
+            android:id="@+id/b"
+            android:layout_width="48dp"
+            android:layout_height="200dp"
+            android:text="b"/>
+
+    </LinearLayout>
+</RelativeLayout>
