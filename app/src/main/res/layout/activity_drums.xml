@@ -3,4 +3,61 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageButton
+        android:id="@+id/rideCymbal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:src="@drawable/buttons" />
+
+    <ImageButton
+        android:id="@+id/crashCymbal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:src="@drawable/buttons" />
+
+    <ImageButton
+        android:id="@+id/middleTom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:src="@drawable/buttons"/>
+
+    <ImageButton
+        android:id="@+id/highTom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:src="@drawable/buttons"/>
+
+    <ImageButton
+        android:id="@+id/floorTom"
+        android:layout_width="wrap_content"
+        android:background="@null"
+        android:layout_height="wrap_content"
+        android:src="@drawable/buttons"/>
+
+    <ImageButton
+        android:id="@+id/Bass"
+        android:layout_width="wrap_content"
+        android:background="@null"
+        android:layout_height="wrap_content"
+        android:src="@drawable/buttons"/>
+
+    <ImageButton
+        android:id="@+id/Snare"
+        android:layout_width="wrap_content"
+        android:background="@null"
+        android:layout_height="wrap_content"
+        android:src="@drawable/buttons"
+        />
+
+    <ImageButton
+        android:id="@+id/hiHatSymb"
+        android:layout_width="wrap_content"
+        android:background="@null"
+        android:layout_height="wrap_content"
+        android:src="@drawable/buttons" />
+
 </LinearLayout>
