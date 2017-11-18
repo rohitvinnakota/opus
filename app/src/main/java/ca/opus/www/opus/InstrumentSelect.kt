@@ -16,7 +16,7 @@ class InstrumentSelect : AppCompatActivity() {
         setContentView(R.layout.activity_instrument_select)
         pianoFab.setOnClickListener({
             //
-            val intent = Intent(this, TrackViewActivity::class.java);
+            val intent = Intent(this, PianoActivity::class.java);
             var message = "Test";
             intent.putExtra(EXTRA_MESSAGE, message);
             startActivity(intent);

@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.activity_create_song.*
 /**
  * Created by Rohit on 2017-11-18.
  */
-class createNewSong : AppCompatActivity() {
+class CreateNewSong : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_song)
