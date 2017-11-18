@@ -14,12 +14,11 @@ class createNewSong : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_song)
         startButton.setOnClickListener({
-            //take user to instrument screen
-            val intent = Intent(this, songListActivity::class.java);
+            //
+            val intent = Intent(this, TrackViewActivity::class.java);
             var message = "Test";
             intent.putExtra(EXTRA_MESSAGE, message);
             startActivity(intent);
-
 
         })
     }
