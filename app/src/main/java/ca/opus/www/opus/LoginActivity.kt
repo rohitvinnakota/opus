@@ -24,6 +24,7 @@ import android.widget.TextView
 import java.util.ArrayList
 import android.Manifest.permission.READ_CONTACTS
 import android.content.Intent
+import android.provider.AlarmClock.EXTRA_MESSAGE
 
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -37,11 +38,10 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         loginButton.setOnClickListener({
             //if name in textview is Rohit, James, Matt go ahead, else Toast incorrect login
-                    val intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.editText);
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
+            val intent =   Intent(this,songListActivity::class.java);
+            var message = "Test";
+            intent.putExtra(EXTRA_MESSAGE, message);
+            startActivity(intent);
 
 
         })
