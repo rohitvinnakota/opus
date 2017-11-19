@@ -78,6 +78,12 @@ class PianoActivity : AppCompatActivity(){
 
         Record.setOnClickListener({
             recording = true
+            StopRecord.setEnabled(true)
+        })
+
+        StopRecord.setOnClickListener({
+            recording = false
+            StopRecord.setEnabled(false)
         })
 
 
