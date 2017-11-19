@@ -17,7 +17,7 @@ import kotlinx.android.synthetic.main.activity_tracklist.*
 class TrackViewActivity: AppCompatActivity() {
 
     var songs: ArrayList<SongRecording> = ArrayList(0);
-    var songNames: ArrayList<String> = ArrayList();
+    val songNames: ArrayList<String> = ArrayList();
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,6 +37,7 @@ class TrackViewActivity: AppCompatActivity() {
         var adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, songNames);
 
         listView.adapter = adapter;
+        adapter.notifyDataSetChanged();
 
 //        song_list_forms.setOnItemClickListener({
 //

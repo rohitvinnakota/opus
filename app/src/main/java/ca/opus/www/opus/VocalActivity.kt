@@ -58,13 +58,8 @@ class VocalActivity : AppCompatActivity() {
     fun stopRecordVocals() {
         recorder.stop()
         recorder.release()
-        uploadAudio()
 
     }
 
-    private fun uploadAudio() {
-// ListView Item Click Listener
-            }
+
         }
-    }
-}
