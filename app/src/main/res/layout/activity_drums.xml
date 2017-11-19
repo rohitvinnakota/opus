@@ -3,61 +3,69 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageButton
+    <Button
         android:id="@+id/rideCymbal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
+        android:text="@+string/Ride Cymbal"
         android:src="@drawable/buttons" />
 
-    <ImageButton
+    <Button
         android:id="@+id/crashCymbal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
+        android:text="@+string/Crash Cymbal"
         android:src="@drawable/buttons" />
 
-    <ImageButton
+    <Button
         android:id="@+id/middleTom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
+        android:text="@+string/Middle Tom"
         android:src="@drawable/buttons"/>
 
-    <ImageButton
+    <Button
         android:id="@+id/highTom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@null"
+        android:text="@+string/High Tom"
         android:src="@drawable/buttons"/>
 
-    <ImageButton
+    <Button
         android:id="@+id/floorTom"
         android:layout_width="wrap_content"
         android:background="@null"
         android:layout_height="wrap_content"
+        android:text="@+string/Floor Tom"
         android:src="@drawable/buttons"/>
 
-    <ImageButton
+    <Button
         android:id="@+id/Bass"
         android:layout_width="wrap_content"
         android:background="@null"
         android:layout_height="wrap_content"
+        android:text="@+string/Bass"
         android:src="@drawable/buttons"/>
 
-    <ImageButton
+    <Button
         android:id="@+id/Snare"
         android:layout_width="wrap_content"
         android:background="@null"
         android:layout_height="wrap_content"
+        android:text="@+string/Snare"
         android:src="@drawable/buttons"
         />
 
-    <ImageButton
+    <Button
         android:id="@+id/hiHatSymb"
         android:layout_width="wrap_content"
         android:background="@null"
         android:layout_height="wrap_content"
+        android:text="@+string/Hi Hat"
         android:src="@drawable/buttons" />
 
 </LinearLayout>

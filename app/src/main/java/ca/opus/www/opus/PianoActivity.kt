@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.provider.AlarmClock
 import android.support.v7.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_tracklist.*
+import kotlinx.android.synthetic.main.piano_activity.*
 
 /**
  * Created by James on 11/18/2017.
