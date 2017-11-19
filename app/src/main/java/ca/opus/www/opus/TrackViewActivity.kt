@@ -1,6 +1,7 @@
 package ca.opus.www.opus
 
 import android.content.Intent
+import android.media.SoundPool
 import android.os.Bundle
 import android.provider.AlarmClock
 import android.support.v7.app.AppCompatActivity
@@ -87,7 +88,48 @@ class TrackViewActivity : AppCompatActivity() {
         })
 
         trackToggleButton.setOnClickListener() {
+            var pool = SoundPool.Builder().setMaxStreams(5).build();
+            var a_key = pool.load(this, R.raw.piano_a, 1);
+            var b_key = pool.load(this, R.raw.piano_b, 1);
+            var c_key = pool.load(this, R.raw.piano_c, 1);
+            var d_key = pool.load(this, R.raw.piano_d, 1);
+            var e_key = pool.load(this, R.raw.piano_e, 1);
+            var f_key = pool.load(this, R.raw.piano_f, 1);
+            var g_key = pool.load(this, R.raw.piano_g, 1);
 
+            var hihat_sound = pool.load(this, R.raw.hihat, 1);
+            var kick_sound = pool.load(this, R.raw.kick, 1);
+            var openhat_sound = pool.load(this, R.raw.openhat, 1);
+            var ride_sound = pool.load(this, R.raw.ride, 1);
+            var crash_sound = pool.load(this, R.raw.crash, 1);
+            var snare_sound = pool.load(this, R.raw.snare, 1);
+            var tom_sound = pool.load(this, R.raw.tom, 1);
+
+            for(song in (application as Test).songs){
+                for(note in song.records){
+                    if(note == "a"){
+                        pool.play(a_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
+                    }
+                    if(note == "b"){
+                        pool.play(b_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
+                    }
+                    if(note == "c"){
+                        pool.play(c_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
+                    }
+                    if(note == "d"){
+                        pool.play(d_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
+                    }
+                    if(note == "e"){
+                        pool.play(e_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
+                    }
+                    if(note == "f"){
+                        pool.play(f_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
+                    }
+                    if(note == "g"){
+                        pool.play(g_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
+                    }
+                }
+            }
         }
     }
 

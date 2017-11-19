@@ -30,6 +30,15 @@ class SongRecording : Serializable
         records.add(record);
     }
 
+    fun size() : Int{
+        return times.size;
+    }
+
+    fun get(index : Int) : String
+    {
+        return records[index];
+    }
+
     fun clear()
     {
         times.clear();
