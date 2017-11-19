@@ -5,6 +5,7 @@ import android.media.SoundPool
 import android.os.Bundle
 import android.provider.AlarmClock
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
@@ -108,17 +109,30 @@ class TrackViewActivity : AppCompatActivity() {
             var tom_sound = pool.load(this, R.raw.tom, 1);
             val context = applicationContext
             val duration = Toast.LENGTH_SHORT
-            for(song in (application as Test).songs){
-                for(note in song.records){
-                    var toast = Toast.makeText(context, note.toString(), duration)
-                    toast.show()
-                    pool.play(note, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
-                    Thread.sleep(1_000)
-                }
+
+            for(i in 0..30000){
+                for(j in 0..song.times.size-1) {
+                    if (i.toLong() == song.times[j]) {
+                        pool.play(song.records[j], 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
+                        break;
+                    }
                 }
             }
+
+
+//            for (song in (application as Test).songs) {
+//                //for(note in song.records){
+//                for (i in 0..song.times.size-1) {
+//                    Log.d("fuck",song.times[i].toString())
+//                    pool.play(song.records[i], 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
+//                    Thread.sleep(1_000)
+//                }
+//
+//            }
         }
     }
+}
+
 
 
 
