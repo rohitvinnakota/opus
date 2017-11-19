@@ -14,22 +14,7 @@ import kotlinx.android.synthetic.main.activity_tracklist.*
 /**
  * Created by Rohit on 2017-11-18.
  */
-class TrackViewActivity: AppCompatActivity() {
-
-    companion object {
-        val songs: ArrayList<SongRecording> = ArrayList(0);
-        val songNames: ArrayList<String> = ArrayList();
-    }
-
-//    companion object {
-//        lateinit var songs: ArrayList<SongRecording>
-//        lateinit var songNames: ArrayList<String>
-//    }
-//
-//    init{
-//        songs = ArrayList(0);
-//
-//    }
+class TrackViewActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,12 +53,12 @@ class TrackViewActivity: AppCompatActivity() {
 //        }
     }
 
-    override fun onResume() {
-        super.onResume()
+    override fun onStart() {
+        super.onStart()
 
         setContentView(R.layout.activity_tracklist)
         val context = applicationContext
-        val text = songs.size.toString()
+        val text = (application as Test).songs.size.toString()
         val duration = Toast.LENGTH_SHORT
         val toast = Toast.makeText(context, text, duration)
         toast.show()
@@ -82,16 +67,16 @@ class TrackViewActivity: AppCompatActivity() {
 
         var song: SongRecording = bundle!!.getSerializable("song") as SongRecording;
 
-        songs.add(song);
-        songNames.add(song.name);
+        (application as Test).songs.add(song);
+        (application as Test).songNames.add(song.name);
 
         // set list view with song names
         var listView = song_list_forms
 
-        var adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, songNames);
+        var adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, (application as Test).songNames);
 
         listView.adapter = adapter;
-        adapter.notifyDataSetChanged();
+        adapter.notifyDataSetChanged();jkm
 
         newInstrumentFab.setOnClickListener({
             //take user to instrument screen
@@ -101,13 +86,12 @@ class TrackViewActivity: AppCompatActivity() {
             startActivity(intent);
         })
 
-        trackToggleButton.setOnClickListener(){
+        trackToggleButton.setOnClickListener() {
 
         }
     }
 
 }
-
 
 
 //// Get ListView object from xml
