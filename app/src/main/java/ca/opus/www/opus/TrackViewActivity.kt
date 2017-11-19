@@ -119,7 +119,7 @@ class TrackViewActivity : AppCompatActivity() {
                 var index2 = 0
 
                 while (index < song.times.size) {
-                    
+
                     if ((System.currentTimeMillis() - startTimer) >= song.times[index]) {
                         pool.play(song.records[index], 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
                         index += 1

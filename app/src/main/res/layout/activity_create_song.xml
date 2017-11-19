@@ -36,6 +36,7 @@
         android:layout_below="@+id/textInputLayout2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="33dp"
-        android:hint="Song name" />
+        android:hint="Song name"
+        android:textColorHint="#DDAAAAAA"/>
 
 </RelativeLayout>
