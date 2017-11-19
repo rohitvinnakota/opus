@@ -19,8 +19,56 @@ class TrackViewActivity: AppCompatActivity() {
     var songs: ArrayList<SongRecording> = ArrayList(0);
     var songNames: ArrayList<String> = ArrayList();
 
+//    companion object {
+//        lateinit var songs: ArrayList<SongRecording>
+//        lateinit var songNames: ArrayList<String>
+//    }
+//
+//    init{
+//        songs = ArrayList(0);
+//
+//    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+//        setContentView(R.layout.activity_tracklist)
+
+//        var intent = this.getIntent();
+//        var bundle = intent.getExtras();
+//
+//        var song: SongRecording = bundle!!.getSerializable("song") as SongRecording;
+//
+//        songs.add(song);
+//        songNames.add(song.name);
+//
+//        // set list view with song names
+//        var listView = findViewById<ListView>(R.id.song_list_forms);
+//
+//        var adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, songNames);
+//
+//        listView.adapter = adapter;
+
+//        song_list_forms.setOnItemClickListener({
+//
+//
+//        })
+
+//        newInstrumentFab.setOnClickListener({
+//            //take user to instrument screen
+//            val intent = Intent(this, InstrumentSelect::class.java);
+//            var message = "Test";
+//            intent.putExtra(AlarmClock.EXTRA_MESSAGE, message);
+//            startActivity(intent);
+//        })
+//
+//        trackToggleButton.setOnClickListener(){
+//
+//        }
+    }
+
+    override fun onStart() {
+        super.onStart()
+
         setContentView(R.layout.activity_tracklist)
 
         var intent = this.getIntent();
@@ -38,12 +86,6 @@ class TrackViewActivity: AppCompatActivity() {
 
         listView.adapter = adapter;
 
-//        song_list_forms.setOnItemClickListener({
-//
-//
-//        })
-
-
         newInstrumentFab.setOnClickListener({
             //take user to instrument screen
             val intent = Intent(this, InstrumentSelect::class.java);
@@ -55,8 +97,6 @@ class TrackViewActivity: AppCompatActivity() {
         trackToggleButton.setOnClickListener(){
 
         }
-
-
     }
 
 }
