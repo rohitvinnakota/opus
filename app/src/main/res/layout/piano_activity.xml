@@ -8,62 +8,79 @@
     android:paddingBottom= "16dp"
     android:paddingLeft= "16dp"
     android:paddingRight= "16dp"
-    android:paddingTop= "16dp">
+    android:paddingTop= "16dp"
+    android:gravity="center">
     <!--tools:context= "com.example.james.test.MainActvity"-->
 
 
-    <LinearLayout
+    <RelativeLayout
         android:orientation= "horizontal"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:weightSum= "8"
         android:id="@+id/linearLayout">
 
         <Button
             android:id="@+id/c"
+            android:layout_marginLeft="8dp"
             android:layout_width="48dp"
             android:layout_height="200dp"
-            android:text="c"/>
+            android:text="c"
+            android:background="@drawable/c_key"
+            />
 
         <Button
             android:id="@+id/d"
             android:layout_width="48dp"
             android:layout_height="200dp"
-            android:text="d"/>
+            android:text="d"
+            android:background="@drawable/d_key"
+            android:layout_toEndOf="@id/c"/>
 
         <Button
             android:id="@+id/e"
             android:layout_width="48dp"
             android:layout_height="200dp"
-            android:text="e"/>
+            android:text="e"
+            android:background="@drawable/e_key"
+            android:layout_toEndOf="@id/d"/>
 
         <Button
             android:id="@+id/f"
             android:layout_width="48dp"
             android:layout_height="200dp"
-            android:text="f"/>
+            android:text="f"
+            android:background="@drawable/f_key"
+            android:layout_toEndOf="@id/e"/>
 
         <Button
             android:id="@+id/g"
             android:layout_width="48dp"
             android:layout_height="200dp"
-            android:text="g"/>
+            android:text="g"
+            android:background="@drawable/g_key"
+            android:layout_toEndOf="@id/f"/>
 
         <Button
             android:id="@+id/a"
             android:layout_width="48dp"
             android:layout_height="200dp"
-            android:text="a"/>
+            android:text="a"
+            android:background="@drawable/a_key"
+            android:layout_toEndOf="@id/g"/>
 
         <Button
             android:id="@+id/b"
             android:layout_width="48dp"
             android:layout_height="200dp"
-            android:text="b"/>
+            android:text="b"
+            android:background="@drawable/b_key"
+            android:layout_toEndOf="@id/a"/>
 
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
     <Button
         android:id="@+id/Record"

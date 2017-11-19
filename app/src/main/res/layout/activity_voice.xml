@@ -30,11 +30,6 @@
         android:layout_marginTop="57dp"
         android:text="Audio Recording" />
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/recordButton"
-        android:layout_toEndOf="@+id/recordButton" />
+
+
 </RelativeLayout>

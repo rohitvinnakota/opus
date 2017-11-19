@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_voice.*
 import java.io.IOException
 import android.view.View.OnTouchListener
-
+import android.widget.Button
 
 
 /**
@@ -34,6 +34,7 @@ class VocalActivity : AppCompatActivity() {
         recordButton.setOnClickListener({
             recordVocals()
 
+
         })
         stopRecordButton.setOnClickListener({
             stopRecordVocals()
@@ -47,6 +48,7 @@ class VocalActivity : AppCompatActivity() {
         recorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT)
         recorder.setOutputFile(filename)
         recorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT)
+        recorder.setAudioSamplingRate(16000);
         try {
             recorder.prepare()
             recorder.start()
