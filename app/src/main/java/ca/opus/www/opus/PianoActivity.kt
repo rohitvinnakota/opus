@@ -30,12 +30,13 @@ class PianoActivity : AppCompatActivity(){
         var f_key = pool.load(this, R.raw.piano_f, 1);
         var g_key = pool.load(this, R.raw.piano_g, 1);
 
-        var song = SongRecording("MyTune", "James");
+        var song = SongRecording("Piano","MyTune", "James");
 
         a.setOnClickListener({
             pool.play(a_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
             if(recording){
-                a.setText("SAOIHDAOSIDJOSAIFJOFSAIJ")
+                val tsLong = System.currentTimeMillis() / 1000 - recordingStartTime;
+                song.add(tsLong, a.toString() );
             }
         })
 

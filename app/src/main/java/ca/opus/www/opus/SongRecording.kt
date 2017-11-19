@@ -9,13 +9,15 @@ import java.io.Serializable
  */
 class SongRecording : Serializable
 {
+    var instrument: String;
     var name: String;
     var artistName: String;
     var times: ArrayList<Long>;
     var records: ArrayList<String>;
 
-    constructor(name : String, artistName : String)
+    constructor(instrument : String, name : String, artistName : String)
     {
+        this.instrument = instrument;
         this.name = name;
         this.artistName = artistName;
         this.times = ArrayList(0);
