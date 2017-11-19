@@ -14,12 +14,11 @@ import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_voice.*
 import java.io.IOException
 import android.view.View.OnTouchListener
+import android.widget.Button
 import android.widget.AdapterView
 import android.widget.Toast
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.StorageReference
-
-
 
 
 /**
@@ -39,6 +38,7 @@ class VocalActivity : AppCompatActivity() {
         recordButton.setOnClickListener({
             recordVocals()
 
+
         })
         stopRecordButton.setOnClickListener({
             stopRecordVocals()
@@ -52,7 +52,8 @@ class VocalActivity : AppCompatActivity() {
         recorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT)
         recorder.setOutputFile(filename)
         recorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT)
-        recorder.setAudioSamplingRate(16000)
+        recorder.setAudioSamplingRate(16000);
+
         try {
             recorder.prepare()
             recorder.start()
