@@ -4,6 +4,11 @@ import android.content.Intent
 import android.os.Bundle
 import android.provider.AlarmClock
 import android.support.v7.app.AppCompatActivity
+import android.view.View
+import android.widget.Adapter
+import android.widget.AdapterView
+import android.widget.ListView
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_songlist.*
 
 /**
@@ -21,13 +26,16 @@ class SongListActivity : AppCompatActivity() {
             startActivity(intent);
         })
 
-        //If user clicks on listView item, go to trackview for that song
-        /**list_forms.setOnItemClickListener({
-            val context = applicationContext
-            val text = "Take to trackView!"
-            val duration = Toast.LENGTH_SHORT
-            val toast = Toast.makeText(context, text, duration)
-            toast.show()
-        })*/
+
+        fun list_forms.itemClick(itemClick: (Int) -> Any): ListView {
+            this.setOnItemClickListener (object: AdapterView.OnItemClickListener {
+                override fun onItemClick(parent: AdapterView<out Adapter?>?, view: View?, position: Int, id: Long) {
+                    itemClick(position)
+                }
+
+            })
+        }
     }
 }
+
+

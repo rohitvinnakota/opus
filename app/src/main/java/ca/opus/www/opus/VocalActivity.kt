@@ -13,7 +13,8 @@ import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_voice.*
 import java.io.IOException
 import android.view.View.OnTouchListener
-
+import android.widget.AdapterView
+import android.widget.Toast
 
 
 /**
@@ -21,11 +22,9 @@ import android.view.View.OnTouchListener
  */
 class VocalActivity : AppCompatActivity() {
 
-    val recorder = android.media.MediaRecorder()
+    val recorder =  android.media.MediaRecorder()
     var filename = ""
-
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         filename = Environment.getExternalStorageDirectory().getAbsolutePath()
         filename = filename +"/" + Math.random().toString() +  "recorded_audio.3gp"
@@ -47,6 +46,7 @@ class VocalActivity : AppCompatActivity() {
         recorder.setOutputFormat(MediaRecorder.OutputFormat.DEFAULT)
         recorder.setOutputFile(filename)
         recorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT)
+        recorder.setAudioSamplingRate(16000)
         try {
             recorder.prepare()
             recorder.start()
@@ -58,6 +58,13 @@ class VocalActivity : AppCompatActivity() {
     fun stopRecordVocals() {
         recorder.stop()
         recorder.release()
+        uploadAudio()
 
+    }
+
+    private fun uploadAudio() {
+// ListView Item Click Listener
+            }
+        }
     }
 }
