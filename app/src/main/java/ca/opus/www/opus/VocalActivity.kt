@@ -53,7 +53,6 @@ class VocalActivity : AppCompatActivity() {
         } catch (e : IOException) {
             e.printStackTrace()
         }
-    recorder.start()
     }
 
     fun stopRecordVocals() {
