@@ -11,7 +11,7 @@
         android:layout_below="@+id/vocalDesc"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="38dp"
-        android:text="Tap and Hold to Record" />
+        android:text="Press to record" />
 
     <Button
         android:id="@+id/stopRecordButton"
@@ -19,6 +19,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/recordButton"
         android:layout_centerHorizontal="true"
+        android:enabled="false"
         android:text="Stop Recording" />
 
     <TextView
