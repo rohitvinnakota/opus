@@ -87,7 +87,7 @@ class TrackViewActivity : AppCompatActivity() {
 //            startActivity(intent);
 //        })
 
-        newInstrumentFab.setOnClickListener() {
+        trackToggleButton.setOnClickListener() {
 
 
             var pool = SoundPool.Builder().setMaxStreams(5).build();
@@ -107,11 +107,8 @@ class TrackViewActivity : AppCompatActivity() {
             var snare_sound = pool.load(this, R.raw.snare, 1);
             var tom_sound = pool.load(this, R.raw.tom, 1);
             val context = applicationContext
-            val duration = Toast.LENGTH_SHORT
             for(song in (application as Test).songs){
                 for(note in song.records){
-                    var toast = Toast.makeText(context, note.toString(), duration)
-                    toast.show()
                     pool.play(note, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
                     Thread.sleep(1_000)
                 }

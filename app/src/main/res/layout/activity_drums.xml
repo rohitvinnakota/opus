@@ -95,8 +95,8 @@
         android:id="@+id/StopRecordDrum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/Record"
-        android:layout_alignBottom="@+id/Record"
+        android:layout_alignBaseline="@+id/RecordDrum"
+        android:layout_alignBottom="@+id/RecordDrum"
         android:layout_centerHorizontal="true"
         android:enabled="false"
         android:text="Stop Recording" />
@@ -105,8 +105,8 @@
         android:id="@+id/SaveDrum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/StopRecord"
-        android:layout_alignBottom="@+id/StopRecord"
+        android:layout_alignBaseline="@+id/StopRecordDrum"
+        android:layout_alignBottom="@+id/StopRecordDrum"
         android:layout_alignParentEnd="true"
         android:text="Save" />
 

@@ -96,12 +96,12 @@ import kotlinx.android.synthetic.main.piano_activity.*
                 recording = true
                 song.clear();
                 recordingStartTime = System.currentTimeMillis() / 1000;
-                StopRecord.setEnabled(true)
+                StopRecordDrum.setEnabled(true)
             })
 
             StopRecordDrum.setOnClickListener({
                 recording = false
-                StopRecord.setEnabled(false)
+                StopRecordDrum.setEnabled(false)
             })
 
             SaveDrum.setOnClickListener(){

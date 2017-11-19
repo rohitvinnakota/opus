@@ -42,25 +42,25 @@
             android:src="@android:drawable/ic_input_add" />
     </LinearLayout>
 
-    <ImageButton
+    <!--<ImageButton
         android:id="@+id/trackToggleButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/song_bar_bottom"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20dp"
-        android:background="@drawable/play_button"/>
+        android:background="@drawable/play_button"/>-->
 
-    <!--<ToggleButton-->
-        <!--android:id="@+id/trackToggleButton"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:textOn=""-->
-        <!--android:textOff=""-->
-        <!--android:layout_above="@+id/song_bar_bottom"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:layout_marginBottom="20dp"-->
-        <!--android:background="@drawable/check_play"/>-->
+    <ToggleButton
+        android:id="@+id/trackToggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOn=""
+        android:textOff=""
+        android:layout_above="@+id/song_bar_bottom"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/check_play"/>
 
 
 
