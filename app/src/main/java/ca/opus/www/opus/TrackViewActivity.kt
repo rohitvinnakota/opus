@@ -5,6 +5,7 @@ import android.media.SoundPool
 import android.os.Bundle
 import android.provider.AlarmClock
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
@@ -79,12 +80,12 @@ class TrackViewActivity : AppCompatActivity() {
         listView.adapter = adapter;
         adapter.notifyDataSetChanged();
 
-       newInstrumentFab.setOnClickListener({
-           //take user to instrument screen
-           val intent = Intent(this, InstrumentSelect::class.java);
-           var message = "Test";
-           intent.putExtra(AlarmClock.EXTRA_MESSAGE, message);
-           startActivity(intent);
+        newInstrumentFab.setOnClickListener({
+            //take user to instrument screen
+            val intent = Intent(this, InstrumentSelect::class.java);
+            var message = "Test";
+            intent.putExtra(AlarmClock.EXTRA_MESSAGE, message);
+            startActivity(intent);
         })
 
         trackToggleButton.setOnClickListener() {
@@ -107,33 +108,30 @@ class TrackViewActivity : AppCompatActivity() {
             var snare_sound = pool.load(this, R.raw.snare, 1);
             var tom_sound = pool.load(this, R.raw.tom, 1);
             val context = applicationContext
-            for(song in (application as Test).songs){
-                for(note in song.records){
 
-                    pool.play(note, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
-                    Thread.sleep(320)
+            for (song in (application as Test).songs) {
+
+
+                val duration = Toast.LENGTH_SHORT
+
+                val startTimer = System.currentTimeMillis()
+                var index = 0
+                var index2 = 0
+
+                while (index < song.times.size) {
+                    
+                    if ((System.currentTimeMillis() - startTimer) >= song.times[index]) {
+                        pool.play(song.records[index], 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
+                        index += 1
+                    }
                 }
+
+
                 }
-            }
+
+
+
         }
     }
+}
 
-
-
-
-//// Get ListView object from xml
-//var listView = findViewById(R.id.list);
-//
-//// Defined Array values to show in ListView
-//String[] values = new String[] { "Android List View", "Adapter implementation", "Simple List View In Android", "Create List View Android", "Android Example", "List View Source Code",  "List View Array Adapter",  "Android Example List View" };
-//
-//// Define a new Adapter
-//// First parameter - Context
-//// Second parameter - Layout for the row
-//// Third parameter - ID of the TextView to which the data is written
-//// Forth - the Array of data
-//
-//ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, values);
-//
-//// Assign adapter to ListView
-//listView.setAdapter(adapter); 
