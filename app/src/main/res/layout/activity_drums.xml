@@ -5,67 +5,59 @@
 
     <Button
         android:id="@+id/rideCymbal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@null"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_button"
         android:text="@+string/Ride Cymbal"
         android:src="@drawable/buttons" />
 
     <Button
         android:id="@+id/crashCymbal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@null"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_button"
         android:text="@+string/Crash Cymbal"
         android:src="@drawable/buttons" />
 
     <Button
-        android:id="@+id/middleTom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@null"
-        android:text="@+string/Middle Tom"
+        android:id="@+id/hiHat"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_button"
+        android:text="@+string/Hi Hat"
         android:src="@drawable/buttons"/>
 
     <Button
-        android:id="@+id/highTom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@null"
-        android:text="@+string/High Tom"
+        android:id="@+id/openHat"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_button"
+        android:text="@+string/Open Hat"
         android:src="@drawable/buttons"/>
 
     <Button
-        android:id="@+id/floorTom"
-        android:layout_width="wrap_content"
-        android:background="@null"
-        android:layout_height="wrap_content"
-        android:text="@+string/Floor Tom"
+        android:id="@+id/kick"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_button"
+        android:text="@+string/Kick"
         android:src="@drawable/buttons"/>
 
     <Button
-        android:id="@+id/Bass"
-        android:layout_width="wrap_content"
-        android:background="@null"
-        android:layout_height="wrap_content"
-        android:text="@+string/Bass"
+        android:id="@+id/tom"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_button"
+        android:text="@+string/Tom"
         android:src="@drawable/buttons"/>
 
     <Button
-        android:id="@+id/Snare"
-        android:layout_width="wrap_content"
-        android:background="@null"
-        android:layout_height="wrap_content"
+        android:id="@+id/snare"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/round_button"
         android:text="@+string/Snare"
         android:src="@drawable/buttons"
         />
-
-    <Button
-        android:id="@+id/hiHatSymb"
-        android:layout_width="wrap_content"
-        android:background="@null"
-        android:layout_height="wrap_content"
-        android:text="@+string/Hi Hat"
-        android:src="@drawable/buttons" />
 
 </LinearLayout>
