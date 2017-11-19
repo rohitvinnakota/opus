@@ -88,7 +88,7 @@ class TrackViewActivity : AppCompatActivity() {
 //            startActivity(intent);
 //        })
 
-        newInstrumentFab.setOnClickListener() {
+        trackToggleButton.setOnClickListener() {
 
 
             var pool = SoundPool.Builder().setMaxStreams(5).build();
@@ -110,14 +110,19 @@ class TrackViewActivity : AppCompatActivity() {
             val context = applicationContext
             val duration = Toast.LENGTH_SHORT
 
-            for(i in 0..30000){
-                for(j in 0..song.times.size-1) {
+            for (i in 0..30000) {
+                for (j in 0..song.times.size - 1) {
                     if (i.toLong() == song.times[j]) {
                         pool.play(song.records[j], 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
                         break;
                     }
+                    for (song in (application as Test).songs) {
+                        for (note in song.records) {
+                            pool.play(note, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
+                            Thread.sleep(1_000)
+                        }
+                    }
                 }
-            }
 
 
 //            for (song in (application as Test).songs) {
@@ -129,13 +134,12 @@ class TrackViewActivity : AppCompatActivity() {
 //                }
 //
 //            }
+            }
         }
+
+
     }
 }
-
-
-
-
 
 //// Get ListView object from xml
 //var listView = findViewById(R.id.list);

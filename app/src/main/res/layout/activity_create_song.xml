@@ -7,7 +7,8 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    tools:context="ca.opus.www.opus.createNewSong">
+    tools:context="ca.opus.www.opus.CreateNewSong"
+    android:background="@color/charcoal">
 
     <!-- Username Label -->
     <android.support.design.widget.TextInputLayout
