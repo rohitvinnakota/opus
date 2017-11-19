@@ -66,8 +66,8 @@ class TrackViewActivity: AppCompatActivity() {
 //        }
     }
 
-    override fun onStart() {
-        super.onStart()
+    override fun onResume() {
+        super.onResume()
 
         setContentView(R.layout.activity_tracklist)
 
