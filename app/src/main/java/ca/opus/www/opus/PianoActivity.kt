@@ -30,7 +30,7 @@ class PianoActivity : AppCompatActivity(){
         a.setOnClickListener({
             pool.play(a_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
             if(recording){
-                print("recording")
+                a.setText("SAOIHDAOSIDJOSAIFJOFSAIJ")
             }
         })
 
