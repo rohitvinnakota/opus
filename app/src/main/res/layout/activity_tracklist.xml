@@ -1,21 +1,23 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/softGreen">
 
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/song_list_form"
         android:layout_width="fill_parent"
         android:layout_height="470dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:orientation="vertical">
 
 
         <ListView
             android:id="@+id/song_list_forms"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="374dp"
             android:dividerHeight="1dp" />
-
 
 
     </LinearLayout>
@@ -39,4 +41,17 @@
             android:layout_margin="@dimen/activity_horizontal_margin"
             android:src="@android:drawable/ic_input_add" />
     </LinearLayout>
+
+    <ToggleButton
+        android:id="@+id/trackToggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textOn=""
+        android:textOff=""
+        android:layout_above="@+id/song_bar_bottom"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/check_play"/>
+
+
 </RelativeLayout>

@@ -9,4 +9,8 @@
     <color name="complementRed">#1b9898</color>
     <color name="colorAccent">#FF4081</color>
     <color name="softPurple">#8059a6</color>
+    <color name="softGreen">#478557</color>
+    <color name="softBrown">#856647</color>
+    <color name="charcoal">#453321</color>
+
 </resources>

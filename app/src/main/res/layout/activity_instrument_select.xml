@@ -19,9 +19,9 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
 
-        android:layout_alignParentStart="true"
-        android:layout_alignTop="@+id/drumsFab"
-        android:layout_marginStart="12dp"
+        android:layout_above="@+id/drumsFab"
+        android:layout_alignStart="@+id/drumsFab"
+        android:layout_marginBottom="90dp"
         android:background="@null"
         android:contentDescription="@string/bottom_sheet_behavior"
         android:src="@drawable/android_piano" />
@@ -30,9 +30,9 @@
         android:id="@+id/vocalsFab"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/drumsFab"
-        android:layout_marginEnd="14dp"
+        android:layout_alignStart="@+id/drumsFab"
+        android:layout_below="@+id/drumsFab"
+        android:layout_marginTop="90dp"
         android:background="@null"
         android:contentDescription="@string/bottom_sheet_behavior"
         android:src="@drawable/android_vocals" />
