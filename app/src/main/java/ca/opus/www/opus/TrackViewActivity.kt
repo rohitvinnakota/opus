@@ -114,12 +114,11 @@ class TrackViewActivity : AppCompatActivity() {
             var index = 0
 
             while (index < (application as Test).song.times.size) {
-
                 if ((System.currentTimeMillis() - startTimer) >= (application as Test).song.times[index]) {
                     for(item in (application as Test).song.records[index]) {
                         pool.play(item, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
-                        index += 1
                     }
+                    index += 1;
                 }
             }
         }
