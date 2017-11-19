@@ -15,7 +15,7 @@ class CreateNewSong : AppCompatActivity() {
         setContentView(R.layout.activity_create_song)
         startButton.setOnClickListener({
             //
-            val intent = Intent(this, TrackViewActivity::class.java);
+            val intent = Intent(this, InstrumentSelect::class.java);
             var message = "Test";
             intent.putExtra(EXTRA_MESSAGE, message);
             startActivity(intent);
