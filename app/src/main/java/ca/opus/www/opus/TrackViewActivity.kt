@@ -16,8 +16,10 @@ import kotlinx.android.synthetic.main.activity_tracklist.*
  */
 class TrackViewActivity: AppCompatActivity() {
 
-    var songs: ArrayList<SongRecording> = ArrayList(0);
-    var songNames: ArrayList<String> = ArrayList();
+    companion object {
+        val songs: ArrayList<SongRecording> = ArrayList(0);
+        val songNames: ArrayList<String> = ArrayList();
+    }
 
 //    companion object {
 //        lateinit var songs: ArrayList<SongRecording>
@@ -66,11 +68,15 @@ class TrackViewActivity: AppCompatActivity() {
 //        }
     }
 
-    override fun onStart() {
-        super.onStart()
+    override fun onResume() {
+        super.onResume()
 
         setContentView(R.layout.activity_tracklist)
-
+        val context = applicationContext
+        val text = songs.size.toString()
+        val duration = Toast.LENGTH_SHORT
+        val toast = Toast.makeText(context, text, duration)
+        toast.show()
         var intent = this.getIntent();
         var bundle = intent.getExtras();
 
@@ -80,11 +86,12 @@ class TrackViewActivity: AppCompatActivity() {
         songNames.add(song.name);
 
         // set list view with song names
-        var listView = findViewById<ListView>(R.id.song_list_forms);
+        var listView = song_list_forms
 
         var adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, songNames);
 
         listView.adapter = adapter;
+        adapter.notifyDataSetChanged();
 
         newInstrumentFab.setOnClickListener({
             //take user to instrument screen
