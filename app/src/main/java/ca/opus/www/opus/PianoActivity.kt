@@ -5,6 +5,8 @@ import android.media.SoundPool
 import android.os.Bundle
 import android.provider.AlarmClock
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
+import android.util.Log.println
 import kotlinx.android.synthetic.main.activity_tracklist.*
 import kotlinx.android.synthetic.main.piano_activity.*
 
@@ -15,7 +17,7 @@ class PianoActivity : AppCompatActivity(){
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.piano_activity)
-
+        var recording = false
         var pool = SoundPool.Builder().setMaxStreams(5).build();
         var a_key = pool.load(this, R.raw.piano_a, 1);
         var b_key = pool.load(this, R.raw.piano_b, 1);
@@ -27,30 +29,57 @@ class PianoActivity : AppCompatActivity(){
 
         a.setOnClickListener({
             pool.play(a_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
+            if(recording){
+                print("recording")
+            }
         })
 
         b.setOnClickListener({
             pool.play(b_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
+            if(recording){
+                print("recording")
+            }
         })
 
         c.setOnClickListener({
             pool.play(c_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
+            if(recording){
+                print("recording")
+            }
         })
 
         d.setOnClickListener({
             pool.play(d_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
+            if(recording){
+                print("recording")
+            }
         })
 
         e.setOnClickListener({
             pool.play(e_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
+            if(recording){
+                print("recording")
+            }
         })
 
         f.setOnClickListener({
             pool.play(f_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
+            if(recording){
+                print("recording")
+            }
         })
 
         g.setOnClickListener({
             pool.play(g_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
+            if(recording){
+                print("recording")
+            }
         })
+
+        Record.setOnClickListener({
+            recording = true
+        })
+
+
     }
 }
