@@ -92,19 +92,19 @@ import kotlinx.android.synthetic.main.piano_activity.*
             })
 
 
-            Record.setOnClickListener({
+            RecordDrum.setOnClickListener({
                 recording = true
                 song.clear();
                 recordingStartTime = System.currentTimeMillis() / 1000;
                 StopRecord.setEnabled(true)
             })
 
-            StopRecord.setOnClickListener({
+            StopRecordDrum.setOnClickListener({
                 recording = false
                 StopRecord.setEnabled(false)
             })
 
-            Save.setOnClickListener(){
+            SaveDrum.setOnClickListener(){
                 val intent = Intent(this, TrackViewActivity::class.java);
                 var message = "TrackView";
                 var bundle = Bundle();

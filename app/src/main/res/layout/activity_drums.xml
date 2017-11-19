@@ -82,7 +82,7 @@
         android:text="Snare" />
 
     <Button
-        android:id="@+id/Record"
+        android:id="@+id/RecordDrum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
@@ -91,7 +91,7 @@
         android:text="Record" />
 
     <Button
-        android:id="@+id/StopRecord"
+        android:id="@+id/StopRecordDrum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/Record"
@@ -101,7 +101,7 @@
         android:text="Stop Recording" />
 
     <Button
-        android:id="@+id/Save"
+        android:id="@+id/SaveDrum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/StopRecord"
