@@ -79,13 +79,13 @@ class TrackViewActivity : AppCompatActivity() {
         listView.adapter = adapter;
         adapter.notifyDataSetChanged();
 
-//        newInstrumentFab.setOnClickListener({
-//            //take user to instrument screen
-//            val intent = Intent(this, InstrumentSelect::class.java);
-//            var message = "Test";
-//            intent.putExtra(AlarmClock.EXTRA_MESSAGE, message);
-//            startActivity(intent);
-//        })
+       newInstrumentFab.setOnClickListener({
+           //take user to instrument screen
+           val intent = Intent(this, InstrumentSelect::class.java);
+           var message = "Test";
+           intent.putExtra(AlarmClock.EXTRA_MESSAGE, message);
+           startActivity(intent);
+        })
 
         trackToggleButton.setOnClickListener() {
 
@@ -109,8 +109,9 @@ class TrackViewActivity : AppCompatActivity() {
             val context = applicationContext
             for(song in (application as Test).songs){
                 for(note in song.records){
+
                     pool.play(note, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
-                    Thread.sleep(1_000)
+                    Thread.sleep(320)
                 }
                 }
             }
