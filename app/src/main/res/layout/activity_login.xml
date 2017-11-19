@@ -43,7 +43,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:text="Login"
-        android:background="@drawable/round_button"
+        android:background="@drawable/round_menu_button"
         />
 
     <EditText
