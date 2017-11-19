@@ -79,15 +79,17 @@ class TrackViewActivity : AppCompatActivity() {
         listView.adapter = adapter;
         adapter.notifyDataSetChanged();
 
-        newInstrumentFab.setOnClickListener({
-            //take user to instrument screen
-            val intent = Intent(this, InstrumentSelect::class.java);
-            var message = "Test";
-            intent.putExtra(AlarmClock.EXTRA_MESSAGE, message);
-            startActivity(intent);
-        })
+//        newInstrumentFab.setOnClickListener({
+//            //take user to instrument screen
+//            val intent = Intent(this, InstrumentSelect::class.java);
+//            var message = "Test";
+//            intent.putExtra(AlarmClock.EXTRA_MESSAGE, message);
+//            startActivity(intent);
+//        })
 
-        trackToggleButton.setOnClickListener() {
+        newInstrumentFab.setOnClickListener() {
+
+
             var pool = SoundPool.Builder().setMaxStreams(5).build();
             var a_key = pool.load(this, R.raw.piano_a, 1);
             var b_key = pool.load(this, R.raw.piano_b, 1);
@@ -104,36 +106,21 @@ class TrackViewActivity : AppCompatActivity() {
             var crash_sound = pool.load(this, R.raw.crash, 1);
             var snare_sound = pool.load(this, R.raw.snare, 1);
             var tom_sound = pool.load(this, R.raw.tom, 1);
-
+            val context = applicationContext
+            val duration = Toast.LENGTH_SHORT
             for(song in (application as Test).songs){
                 for(note in song.records){
-                    if(note == "a"){
-                        pool.play(a_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
-                    }
-                    if(note == "b"){
-                        pool.play(b_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
-                    }
-                    if(note == "c"){
-                        pool.play(c_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
-                    }
-                    if(note == "d"){
-                        pool.play(d_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
-                    }
-                    if(note == "e"){
-                        pool.play(e_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
-                    }
-                    if(note == "f"){
-                        pool.play(f_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
-                    }
-                    if(note == "g"){
-                        pool.play(g_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
-                    }
+                    var toast = Toast.makeText(context, note.toString(), duration)
+                    toast.show()
+                    pool.play(note, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
+                    Thread.sleep(1_000)
+                }
                 }
             }
         }
     }
 
-}
+
 
 
 //// Get ListView object from xml
