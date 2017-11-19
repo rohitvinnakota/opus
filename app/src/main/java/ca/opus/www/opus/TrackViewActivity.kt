@@ -76,7 +76,7 @@ class TrackViewActivity : AppCompatActivity() {
         var adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, (application as Test).songNames);
 
         listView.adapter = adapter;
-        adapter.notifyDataSetChanged();jkm
+        adapter.notifyDataSetChanged();
 
         newInstrumentFab.setOnClickListener({
             //take user to instrument screen
