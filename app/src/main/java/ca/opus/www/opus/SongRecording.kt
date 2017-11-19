@@ -13,7 +13,7 @@ class SongRecording : Serializable
     var name: String;
     var artistName: String;
     var times: ArrayList<Long>;
-    var records: ArrayList<Int>;
+    var records: ArrayList<ArrayList<Int>>;
 
     constructor(instrument : String, name : String, artistName : String)
     {
@@ -21,22 +21,25 @@ class SongRecording : Serializable
         this.name = name;
         this.artistName = artistName;
         this.times = ArrayList(0);
-        this.records = ArrayList(0);
+        this.records = ArrayList<ArrayList<Int>>(0);
     }
 
     fun add(time: Long, record: Int)
     {
-        times.add(time);
-        records.add(record);
+        var index = times.indexOf(time)
+        if(index == -1){
+            times.add(time);
+            var tempList = ArrayList<Int>(0)
+            tempList.add(record)
+            records.add(tempList)
+        }
+        else{
+            records[index].add(record)
+        }
     }
 
     fun size() : Int{
         return times.size;
-    }
-
-    fun get(index : Int) : Int
-    {
-        return records[index];
     }
 
     fun clear()

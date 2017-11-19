@@ -22,6 +22,13 @@ class PianoActivity : AppCompatActivity(){
         var recordingStartTime = 0.toLong();
 
         var pool = SoundPool.Builder().setMaxStreams(5).build();
+        var hihat_sound = pool.load(this, R.raw.hihat, 1);
+        var kick_sound = pool.load(this, R.raw.kick, 1);
+        var openhat_sound = pool.load(this, R.raw.openhat, 1);
+        var ride_sound = pool.load(this, R.raw.ride, 1);
+        var crash_sound = pool.load(this, R.raw.crash, 1);
+        var snare_sound = pool.load(this, R.raw.snare, 1);
+        var tom_sound = pool.load(this, R.raw.tom, 1);
         var a_key = pool.load(this, R.raw.piano_a, 1);
         var b_key = pool.load(this, R.raw.piano_b, 1);
         var c_key = pool.load(this, R.raw.piano_c, 1);
@@ -30,13 +37,13 @@ class PianoActivity : AppCompatActivity(){
         var f_key = pool.load(this, R.raw.piano_f, 1);
         var g_key = pool.load(this, R.raw.piano_g, 1);
 
-        var song = SongRecording("Piano","MyTune", "James");
+        //var song = SongRecording("Piano","MyTune", "James");
 
         a.setOnClickListener({
             pool.play(a_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
             if(recording){
                 val tsLong = System.currentTimeMillis() - recordingStartTime;
-                song.add(tsLong, a_key );
+                (application as Test).song.add(tsLong, a_key );
             }
         })
 
@@ -44,7 +51,7 @@ class PianoActivity : AppCompatActivity(){
             pool.play(b_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
             if(recording){
                 val tsLong = System.currentTimeMillis() - recordingStartTime;
-                song.add(tsLong, b_key );
+                (application as Test).song.add(tsLong, b_key );
             }
         })
 
@@ -52,7 +59,7 @@ class PianoActivity : AppCompatActivity(){
             pool.play(c_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
             if(recording){
                 val tsLong = System.currentTimeMillis() - recordingStartTime;
-                song.add(tsLong, c_key );
+                (application as Test).song.add(tsLong, c_key );
             }
         })
 
@@ -60,7 +67,7 @@ class PianoActivity : AppCompatActivity(){
             pool.play(d_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
             if(recording){
                 val tsLong = System.currentTimeMillis() - recordingStartTime;
-                song.add(tsLong, d_key );
+                (application as Test).song.add(tsLong, d_key );
             }
         })
 
@@ -68,7 +75,7 @@ class PianoActivity : AppCompatActivity(){
             pool.play(e_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
             if(recording){
                 val tsLong = System.currentTimeMillis() - recordingStartTime;
-                song.add(tsLong, e_key );
+                (application as Test).song.add(tsLong, e_key );
             }
         })
 
@@ -76,7 +83,7 @@ class PianoActivity : AppCompatActivity(){
             pool.play(f_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
             if(recording){
                 val tsLong = System.currentTimeMillis() - recordingStartTime;
-                song.add(tsLong, f_key );
+                (application as Test).song.add(tsLong, f_key );
             }
         })
 
@@ -84,13 +91,13 @@ class PianoActivity : AppCompatActivity(){
             pool.play(g_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
             if(recording){
                 val tsLong = System.currentTimeMillis() - recordingStartTime;
-                song.add(tsLong, g_key );
+                (application as Test).song.add(tsLong, g_key );
             }
         })
 
         Record.setOnClickListener({
             recording = true
-            song.clear();
+            (application as Test).song.clear();
             recordingStartTime = System.currentTimeMillis();
             StopRecord.setEnabled(true)
         })
@@ -104,7 +111,7 @@ class PianoActivity : AppCompatActivity(){
             val intent = Intent(this, TrackViewActivity::class.java);
             var message = "TrackView";
             var bundle = Bundle();
-            bundle.putSerializable("song", song);
+            bundle.putSerializable("song", (application as Test).song);
             intent.putExtra(AlarmClock.EXTRA_MESSAGE, message);
             intent.putExtras(bundle);
             startActivity(intent);

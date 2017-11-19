@@ -59,26 +59,28 @@ class TrackViewActivity : AppCompatActivity() {
         super.onStart()
 
         setContentView(R.layout.activity_tracklist)
-        val context = applicationContext
-        val text = (application as Test).songs.size.toString()
-        val duration = Toast.LENGTH_SHORT
-        val toast = Toast.makeText(context, text, duration)
-        toast.show()
+        //val context = applicationContext
+        //val text = (application as Test).songs.size.toString()
+        //val duration = Toast.LENGTH_SHORT
+        //val toast = Toast.makeText(context, text, duration)
+        //toast.show()
         var intent = this.getIntent();
         var bundle = intent.getExtras();
 
         var song: SongRecording = bundle!!.getSerializable("song") as SongRecording;
 
-        (application as Test).songs.add(song);
-        (application as Test).songNames.add(song.name);
+        //(application as Test).songs.add(song);
+        //(application as Test).songNames.add(song.name);
+
+        (application as Test).song = song;
 
         // set list view with song names
-        var listView = song_list_forms
-
-        var adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, (application as Test).songNames);
-
-        listView.adapter = adapter;
-        adapter.notifyDataSetChanged();
+//        var listView = song_list_forms
+//
+//        var adapter = ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, );
+//
+//        listView.adapter = adapter;
+//        adapter.notifyDataSetChanged();
 
         newInstrumentFab.setOnClickListener({
             //take user to instrument screen
@@ -89,17 +91,7 @@ class TrackViewActivity : AppCompatActivity() {
         })
 
         trackToggleButton.setOnClickListener() {
-
-
             var pool = SoundPool.Builder().setMaxStreams(5).build();
-            var a_key = pool.load(this, R.raw.piano_a, 1);
-            var b_key = pool.load(this, R.raw.piano_b, 1);
-            var c_key = pool.load(this, R.raw.piano_c, 1);
-            var d_key = pool.load(this, R.raw.piano_d, 1);
-            var e_key = pool.load(this, R.raw.piano_e, 1);
-            var f_key = pool.load(this, R.raw.piano_f, 1);
-            var g_key = pool.load(this, R.raw.piano_g, 1);
-
             var hihat_sound = pool.load(this, R.raw.hihat, 1);
             var kick_sound = pool.load(this, R.raw.kick, 1);
             var openhat_sound = pool.load(this, R.raw.openhat, 1);
@@ -107,30 +99,29 @@ class TrackViewActivity : AppCompatActivity() {
             var crash_sound = pool.load(this, R.raw.crash, 1);
             var snare_sound = pool.load(this, R.raw.snare, 1);
             var tom_sound = pool.load(this, R.raw.tom, 1);
+            var a_key = pool.load(this, R.raw.piano_a, 1);
+            var b_key = pool.load(this, R.raw.piano_b, 1);
+            var c_key = pool.load(this, R.raw.piano_c, 1);
+            var d_key = pool.load(this, R.raw.piano_d, 1);
+            var e_key = pool.load(this, R.raw.piano_e, 1);
+            var f_key = pool.load(this, R.raw.piano_f, 1);
+            var g_key = pool.load(this, R.raw.piano_g, 1);
             val context = applicationContext
 
-            for (song in (application as Test).songs) {
+            val duration = Toast.LENGTH_SHORT
 
+            val startTimer = System.currentTimeMillis()
+            var index = 0
 
-                val duration = Toast.LENGTH_SHORT
+            while (index < (application as Test).song.times.size) {
 
-                val startTimer = System.currentTimeMillis()
-                var index = 0
-                var index2 = 0
-
-                while (index < song.times.size) {
-                    
-                    if ((System.currentTimeMillis() - startTimer) >= song.times[index]) {
-                        pool.play(song.records[index], 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
+                if ((System.currentTimeMillis() - startTimer) >= (application as Test).song.times[index]) {
+                    for(item in (application as Test).song.records[index]) {
+                        pool.play(item, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
                         index += 1
                     }
                 }
-
-
-                }
-
-
-
+            }
         }
     }
 }

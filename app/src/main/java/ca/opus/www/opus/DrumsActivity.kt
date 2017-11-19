@@ -23,7 +23,6 @@ import kotlinx.android.synthetic.main.piano_activity.*
 
             var recording = false
             var recordingStartTime = 0.toLong();
-
             var pool = SoundPool.Builder().setMaxStreams(5).build();
             var hihat_sound = pool.load(this, R.raw.hihat, 1);
             var kick_sound = pool.load(this, R.raw.kick, 1);
@@ -32,70 +31,76 @@ import kotlinx.android.synthetic.main.piano_activity.*
             var crash_sound = pool.load(this, R.raw.crash, 1);
             var snare_sound = pool.load(this, R.raw.snare, 1);
             var tom_sound = pool.load(this, R.raw.tom, 1);
-
-            var song = SongRecording("Drums","MyTune", "James");
+            var a_key = pool.load(this, R.raw.piano_a, 1);
+            var b_key = pool.load(this, R.raw.piano_b, 1);
+            var c_key = pool.load(this, R.raw.piano_c, 1);
+            var d_key = pool.load(this, R.raw.piano_d, 1);
+            var e_key = pool.load(this, R.raw.piano_e, 1);
+            var f_key = pool.load(this, R.raw.piano_f, 1);
+            var g_key = pool.load(this, R.raw.piano_g, 1);
+            //var song = SongRecording("Drums","MyTune", "James");
 
             rideCymbal.setOnClickListener({
                 pool.play(ride_sound, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
                 if(recording){
-                    val tsLong = System.currentTimeMillis() / 1000 - recordingStartTime;
-                    song.add(tsLong, ride_sound );
+                    val tsLong = System.currentTimeMillis() - recordingStartTime;
+                    (application as Test).song.add(tsLong, ride_sound );
                 }
             })
 
             crashCymbal.setOnClickListener({
                 pool.play(crash_sound, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
                 if(recording){
-                    val tsLong = System.currentTimeMillis() / 1000 - recordingStartTime;
-                    song.add(tsLong, crash_sound );
+                    val tsLong = System.currentTimeMillis() - recordingStartTime;
+                    (application as Test).song.add(tsLong, crash_sound );
                 }
             })
 
             hiHat.setOnClickListener({
                 pool.play(hihat_sound, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
                 if(recording){
-                    val tsLong = System.currentTimeMillis() / 1000 - recordingStartTime;
-                    song.add(tsLong, hihat_sound );
+                    val tsLong = System.currentTimeMillis() - recordingStartTime;
+                    (application as Test).song.add(tsLong, hihat_sound );
                 }
             })
 
             openHat.setOnClickListener({
                 pool.play(openhat_sound, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
                 if(recording){
-                    val tsLong = System.currentTimeMillis() / 1000 - recordingStartTime;
-                    song.add(tsLong, openhat_sound );
+                    val tsLong = System.currentTimeMillis() - recordingStartTime;
+                    (application as Test).song.add(tsLong, openhat_sound );
                 }
             })
 
             kick.setOnClickListener({
                 pool.play(kick_sound, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
                 if(recording){
-                    val tsLong = System.currentTimeMillis() / 1000 - recordingStartTime;
-                    song.add(tsLong, kick_sound );
+                    val tsLong = System.currentTimeMillis() - recordingStartTime;
+                    (application as Test).song.add(tsLong, kick_sound );
                 }
             })
 
             tom.setOnClickListener({
                 pool.play(tom_sound, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
                 if(recording){
-                    val tsLong = System.currentTimeMillis() / 1000 - recordingStartTime;
-                    song.add(tsLong, tom_sound );
+                    val tsLong = System.currentTimeMillis() - recordingStartTime;
+                    (application as Test).song.add(tsLong, tom_sound );
                 }
             })
 
             snare.setOnClickListener({
                 pool.play(snare_sound, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
                 if(recording){
-                    val tsLong = System.currentTimeMillis() / 1000 - recordingStartTime;
-                    song.add(tsLong, snare_sound);
+                    val tsLong = System.currentTimeMillis() - recordingStartTime;
+                    (application as Test).song.add(tsLong, snare_sound);
                 }
             })
 
 
             RecordDrum.setOnClickListener({
                 recording = true
-                song.clear();
-                recordingStartTime = System.currentTimeMillis() / 1000;
+                (application as Test).song.clear();
+                recordingStartTime = System.currentTimeMillis();
                 StopRecordDrum.setEnabled(true)
             })
 
@@ -108,7 +113,7 @@ import kotlinx.android.synthetic.main.piano_activity.*
                 val intent = Intent(this, TrackViewActivity::class.java);
                 var message = "TrackView";
                 var bundle = Bundle();
-                bundle.putSerializable("song", song);
+                bundle.putSerializable("song", (application as Test).song);
                 intent.putExtra(AlarmClock.EXTRA_MESSAGE, message);
                 intent.putExtras(bundle);
                 startActivity(intent);
