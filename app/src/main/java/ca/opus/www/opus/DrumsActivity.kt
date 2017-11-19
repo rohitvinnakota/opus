@@ -39,7 +39,7 @@ import kotlinx.android.synthetic.main.piano_activity.*
                 pool.play(ride_sound, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
                 if(recording){
                     val tsLong = System.currentTimeMillis() / 1000 - recordingStartTime;
-                    song.add(tsLong, rideCymbal.toString() );
+                    song.add(tsLong, ride_sound );
                 }
             })
 
@@ -47,7 +47,7 @@ import kotlinx.android.synthetic.main.piano_activity.*
                 pool.play(crash_sound, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
                 if(recording){
                     val tsLong = System.currentTimeMillis() / 1000 - recordingStartTime;
-                    song.add(tsLong, crashCymbal.toString() );
+                    song.add(tsLong, crash_sound );
                 }
             })
 
@@ -55,7 +55,7 @@ import kotlinx.android.synthetic.main.piano_activity.*
                 pool.play(hihat_sound, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
                 if(recording){
                     val tsLong = System.currentTimeMillis() / 1000 - recordingStartTime;
-                    song.add(tsLong, hiHat.toString() );
+                    song.add(tsLong, hihat_sound );
                 }
             })
 
@@ -63,7 +63,7 @@ import kotlinx.android.synthetic.main.piano_activity.*
                 pool.play(openhat_sound, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
                 if(recording){
                     val tsLong = System.currentTimeMillis() / 1000 - recordingStartTime;
-                    song.add(tsLong, openHat.toString() );
+                    song.add(tsLong, openhat_sound );
                 }
             })
 
@@ -71,7 +71,7 @@ import kotlinx.android.synthetic.main.piano_activity.*
                 pool.play(kick_sound, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
                 if(recording){
                     val tsLong = System.currentTimeMillis() / 1000 - recordingStartTime;
-                    song.add(tsLong, kick.toString() );
+                    song.add(tsLong, kick_sound );
                 }
             })
 
@@ -79,7 +79,7 @@ import kotlinx.android.synthetic.main.piano_activity.*
                 pool.play(tom_sound, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
                 if(recording){
                     val tsLong = System.currentTimeMillis() / 1000 - recordingStartTime;
-                    song.add(tsLong, tom.toString() );
+                    song.add(tsLong, tom_sound );
                 }
             })
 
@@ -87,7 +87,7 @@ import kotlinx.android.synthetic.main.piano_activity.*
                 pool.play(snare_sound, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
                 if(recording){
                     val tsLong = System.currentTimeMillis() / 1000 - recordingStartTime;
-                    song.add(tsLong, snare.toString() );
+                    song.add(tsLong, snare_sound);
                 }
             })
 

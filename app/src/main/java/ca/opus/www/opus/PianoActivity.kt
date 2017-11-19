@@ -36,7 +36,7 @@ class PianoActivity : AppCompatActivity(){
             pool.play(a_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
             if(recording){
                 val tsLong = System.currentTimeMillis() / 1000 - recordingStartTime;
-                song.add(tsLong, a.toString() );
+                song.add(tsLong, a_key );
             }
         })
 
@@ -44,7 +44,7 @@ class PianoActivity : AppCompatActivity(){
             pool.play(b_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
             if(recording){
                 val tsLong = System.currentTimeMillis() / 1000 - recordingStartTime;
-                song.add(tsLong, b.toString() );
+                song.add(tsLong, b_key );
             }
         })
 
@@ -52,7 +52,7 @@ class PianoActivity : AppCompatActivity(){
             pool.play(c_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
             if(recording){
                 val tsLong = System.currentTimeMillis() / 1000 - recordingStartTime;
-                song.add(tsLong, c.toString() );
+                song.add(tsLong, c_key );
             }
         })
 
@@ -60,7 +60,7 @@ class PianoActivity : AppCompatActivity(){
             pool.play(d_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
             if(recording){
                 val tsLong = System.currentTimeMillis() / 1000 - recordingStartTime;
-                song.add(tsLong, d.toString() );
+                song.add(tsLong, d_key );
             }
         })
 
@@ -68,7 +68,7 @@ class PianoActivity : AppCompatActivity(){
             pool.play(e_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
             if(recording){
                 val tsLong = System.currentTimeMillis() / 1000 - recordingStartTime;
-                song.add(tsLong, e.toString() );
+                song.add(tsLong, e_key );
             }
         })
 
@@ -76,7 +76,7 @@ class PianoActivity : AppCompatActivity(){
             pool.play(f_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
             if(recording){
                 val tsLong = System.currentTimeMillis() / 1000 - recordingStartTime;
-                song.add(tsLong, f.toString() );
+                song.add(tsLong, f_key );
             }
         })
 
@@ -84,7 +84,7 @@ class PianoActivity : AppCompatActivity(){
             pool.play(g_key, 1.toFloat(), 1.toFloat(), 0, 0, 1.toFloat())
             if(recording){
                 val tsLong = System.currentTimeMillis() / 1000 - recordingStartTime;
-                song.add(tsLong, g.toString() );
+                song.add(tsLong, g_key );
             }
         })
 

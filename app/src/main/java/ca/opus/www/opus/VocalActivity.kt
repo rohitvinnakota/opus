@@ -65,7 +65,6 @@ class VocalActivity : AppCompatActivity() {
     fun stopRecordVocals() {
         recorder.stop()
         recorder.release()
-
     }
 
 

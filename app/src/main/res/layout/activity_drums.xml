@@ -81,6 +81,7 @@
         android:src="@drawable/round_button"
         android:text="Snare" />
 
+
     <Button
         android:id="@+id/RecordDrum"
         android:layout_width="wrap_content"
